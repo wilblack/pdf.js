@@ -339,8 +339,8 @@ function getDocument(src) {
       }
 
       let networkStream;
-      console.log(`api.js getDocument() _fetchDocument() params: `, params);
-      console.log(`api.js getDocument() rangeTransport() rangeTransport: `, rangeTransport);
+      console.log(`forked api.js getDocument() _fetchDocument() params: `, params);
+      console.log(`forked api.js getDocument() rangeTransport() rangeTransport: `, rangeTransport);
       if (rangeTransport) {
         networkStream = new PDFDataTransportStream({
           length: params.length,
@@ -349,7 +349,7 @@ function getDocument(src) {
           disableStream: params.disableStream,
         }, rangeTransport);
       } else if (!params.data) {
-        console.log(`api.js getDocument() creating networkStream`)
+        console.log(`forked api.js getDocument() creating networkStream`)
         networkStream = createPDFNetworkStream({
           url: params.url,
           length: params.length,
